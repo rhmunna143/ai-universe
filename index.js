@@ -84,3 +84,21 @@ const singleCardModal = async(singleId) => {
 const showMore = () => {
     allCards(true);
 }
+
+// sort
+
+const sortCardsByDate = () => {
+    const cards = document.querySelectorAll(".card");
+    const sortedCards = Array.from(cards).sort((cardA, cardB) => {
+        const dateA = cardA.querySelector(".published-date").textContent;
+        const dateB = cardB.querySelector(".published-date").textContent;
+        return new Date(dateA) - new Date(dateB);
+    });
+
+    const cardsContainer = document.getElementById("cards-section");
+    cardsContainer.textContent = '';
+
+    sortedCards.forEach(card => {
+        cardsContainer.appendChild(card);
+    });
+};
