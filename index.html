@@ -14,25 +14,72 @@
     <main class="container">
         <!-- heading section -->
         <section class="mx-auto text-center p-10">
-            <h2 class="text-5xl font-bold mb-5">AI Universe</h2>
-            <button class="btn btn-secondaruy bg-blue-700 text-white hover:bg-black rounded-md px-6 py-1 mb-5">Sort</button>
+            <h2 class="text-5xl font-bold mb-5">AI Universe Hub</h2>
+            <button class="btn btn-secondaruy bg-blue-700 text-white hover:bg-black rounded-md px-6 py-1 mb-5"
+                onclick="">Sort</button>
             <hr>
         </section>
 
         <!-- cards section -->
-        <section>
+        <section class="p-10 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2">
 
+            <!-- card template -->
+            <div class="card w-96 bg-base-100 rounded-md border border-slate-200 p-5">
+                <figure class="rounded-md"><img class="rounded-md" src="./prod9.png" alt="Shoes" /></figure>
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Title
+                    </h2>
+                    <p>
+                    <h2 class="text-xl font-semibold">Features</h2>
+                    <ol id="features">
+                        <!-- will update by js -->
+
+
+                    </ol>
+                    </p>
+
+                    <hr>
+                    <div class="flex justify-between mt-4">
+                        <div>
+                            <!-- name............ -->
+                            <h2 class="text-xl font-semibold">Name</h2>
+
+                            <!-- date -->
+                            <div class="flex gap-2 items-center">
+                                <i class="fa-regular fa-calendar-days"></i>
+                                <p>Date</p>
+                            </div>
+                        </div>
+
+                        <!-- arrow icon button -->
+                        <div>
+                            <button class="btn btn-circle">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- cards container -->
+            <div>
+
+            </div>
         </section>
 
         <!-- show all section -->
-        <section>
-
+        <section class="text-center space-y-5 p-10">
+            <hr>
+            <button class="btn btn-secondaruy bg-blue-700 text-white hover:bg-black rounded-md px-6 py-1 mb-5"
+                onclick="">Show more</button>
         </section>
     </main>
 
 
     <!-- scripts -->
     <script src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/92c3f0ab6e.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
