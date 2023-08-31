@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body  class="container mx-auto">
+<body class="container mx-auto">
     <main>
         <!-- heading section -->
         <section class="mx-auto text-center p-10">
@@ -21,17 +21,35 @@
         </section>
 
         <!-- cards section -->
-        <section class="px-10 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2" id="cards-section">
+        <section class="px-10 grid grid-cols-1 gap-4 lg:grid-cols-3 md:grid-cols-2" id="cards-section">
 
             <!-- cards container will update by js -->
+
         </section>
 
         <!-- show all section -->
-        <section class="text-center space-y-5 p-10">
+        <section class="text-center space-y-5 p-10 hidden" id="show-more-section">
             <hr>
-            <button class="btn btn-secondaruy bg-blue-700 text-white hover:bg-black rounded-md px-6 py-1 mb-5"
-                onclick="">Show more</button>
+            <button id="show-more-btn" class="btn btn-secondaruy bg-blue-700 text-white hover:bg-black rounded-md px-6 py-1 mb-5"
+                onclick="showMore()">Show more</button>
         </section>
+
+
+        <!-- modal temp -->
+        <section>
+
+            <!-- You can open the modal using ID.showModal() method -->
+            <button class="btn" onclick="my_modal_3.showModal()">open modal</button>
+            <dialog id="my_modal_3" class="modal">
+                <form method="dialog" class="modal-box">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                    <h3 class="font-bold text-lg">Hello!</h3>
+                    <p class="py-4">Press ESC key or click on ✕ button to close</p>
+                </form>
+            </dialog>
+
+        </section>
+
     </main>
 
 

@@ -1,18 +1,36 @@
-const allCards = async () => {
+const allCards = async (showMore = false) => {
     try {
         const response = await fetch("https://openapi.programming-hero.com/api/ai/tools");
         const data = await response.json();
 
-        const allTools = data?.data?.tools;
+        let allTools = data?.data?.tools; 
 
-        console.log(allTools);
+        let flag = false;
+        if (!showMore) {
+            allTools = allTools.slice(0, 6);
+            flag = true;
+        } else {
+            allTools = allTools;
+            flag = false;
+        }
+
+        const showMoreSection = document.getElementById("show-more-section");
+        if(flag) {
+            showMoreSection.classList.remove("hidden")
+        } else{
+            showMoreSection.classList.add("hidden")
+        }
+        
 
         const cardsContainer = document.getElementById("cards-section");
+        cardsContainer.textContent = '';
 
         allTools.forEach(element => {
+            const id = element.id;
+            const strId = String(id);
             const div = document.createElement('div');
             
-            div.className = "card w-96 bg-base-100 rounded-md border border-slate-200 p-5"; // Setting the class names
+            div.className = "card bg-base-100 rounded-md border border-slate-200 p-5 my-2"; // Setting the class names
 
             const description = element?.description ? element?.description : 'Description unavailable';
 
@@ -39,7 +57,7 @@ const allCards = async () => {
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn-circle">
+                            <button class="btn btn-circle" onclick="my_modal_3.showModal(); singleCardModal('${strId}');">
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -54,3 +72,15 @@ const allCards = async () => {
 }
 
 allCards();
+
+const singleCardModal = async(singleId) => {
+    const response = await fetch(`https://openapi.programming-hero.com/api/ai/tool/${singleId}`);
+    const data = await response.json();
+
+    console.log(data.data);
+
+}
+
+const showMore = () => {
+    allCards(true);
+}
