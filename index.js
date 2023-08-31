@@ -19,9 +19,6 @@ const allCards = async () => {
             div.innerHTML = `
                 <figure class="rounded-md"><img class="rounded-md" src="${element?.image}" alt="${element?.name}" /></figure>
                 <div class="card-body">
-                    <h2 class="card-title">
-                        ${element?.name}
-                    </h2>
                     <p>
                         <!-- Description -->
                         ${description.slice(0, 50)}
@@ -35,7 +32,7 @@ const allCards = async () => {
                     <hr>
                     <div class="flex justify-between mt-4">
                         <div>
-                            <h2 class="text-xl font-semibold">${element.name}</h2>
+                            <h2 class="text-xl font-semibold mb-2">${element.name}</h2>
                             <div class="flex gap-2 items-center">
                                 <i class="fa-regular fa-calendar-days"></i>
                                 <p>${element.published_in}</p>
